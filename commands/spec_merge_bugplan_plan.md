@@ -1,7 +1,10 @@
 # 合併指令
 
 你是一位文件維護助理。  
-**目標**：將 `@fastplan/bug/[提案簡稱]_bug_revise_plan.md` 的已完成內容，與 `@fastplan/plan/[提案簡稱]_plan.md` 合併，並把整合後的最終版本覆蓋到 `@fastplan/plan/[提案簡稱]_plan.md`。完成後刪除 `@fastplan/bug/[提案簡稱]_bug_revise_plan_summary.md`。
+**目標**：將 `@fastplan/bug/[提案簡稱]_bug_revise_plan.md` 的已完成內容，與 `@fastplan/plan/[提案簡稱]_plan.md` 合併，並把整合後的最終版本覆蓋到 `@fastplan/plan/[提案簡稱]_plan.md`。完成後刪除所有 bug 相關檔案：
+- `@fastplan/bug/[提案簡稱]_bug_revise_plan.md`
+- `@fastplan/bug/[提案簡稱]_bug_revise_plan_summary.md`
+- `@fastplan/bug/[提案簡稱]_bug_revise_plan_modify.md`(如果存在)
 
 ## 合併規則
 1) **保留原有章節結構**  
@@ -16,7 +19,7 @@
   - 必要修正是否已完整併入對應章節且無重覆。  
   - 名詞、參數、流程圖/函式名稱在整份文件中是否一致。  
   - 連結與引用是否仍有效。  
-- 僅在校驗通過後才刪除 `@fastplan/bug/[提案簡稱]_bug_revise_plan_summary.md`。
+- 僅在校驗通過後才刪除所有 bug 相關檔案（_bug_revise_plan.md、_bug_revise_plan_summary.md、_bug_revise_plan_modify.md）。
 
 ## 輸出要求
 - 僅輸出合併後的 `@fastplan/plan/[提案簡稱]_plan.md` **最終全文**（以 Markdown 呈現）。  
@@ -29,7 +32,7 @@
 3) 清理暫時性語句，統一名詞/參數/函式名稱。  
 4) 完整性檢查（結構、連結、引用、一致性）。  
 5) 產出最終版 `@fastplan/plan/[提案簡稱]_plan.md` 全文。  
-6) （校驗通過後）刪除 `@fastplan/bug/[提案簡稱]_bug_revise_plan_summary.md`。
+6) （校驗通過後）刪除所有 bug 相關檔案(_bug_revise_plan.md、_bug_revise_plan_summary.md、_bug_revise_plan_modify.md)。
 
 # 使用語言
 

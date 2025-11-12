@@ -20,9 +20,9 @@ Fast_Spec 是一套結構化的 AI 輔助開發工作流程指令集，幫助開
 your-project/
 ├── @fastplan/
 │   ├── plan/                      # 功能開發方案
-│   ├── architecture&content/      # 功能架構與內容
+│   ├── knowledge/                 # 功能架構與內容
 │   ├── bug/                       # Bug 修復方案
-│   └── acomplish/                 # 已完成方案
+│   └── accomplish/                # 已完成方案
 ├── .claude/
 │   └── commands/                  # Claude Code 指令
 │       ├── spec_plan_proposal.md
@@ -42,7 +42,7 @@ your-project/
 | `/spec_plan_proposal`  | 規劃方案   | 文件 ✏️   |
 | `/spec_plan_modify`    | 修改方案   | 文件 ✏️   |
 | `/spec_plan_implement` | 開始寫程式 | 程式碼 💻   |
-| `/spec_plan_acomplish` | 完成歸檔   | 移動文件 📁 |
+| `/spec_plan_accomplish` | 完成歸檔   | 移動文件 📁 |
 
 ### 🐛 Bug 修復（4個指令）
 
@@ -77,7 +77,7 @@ your-project/
 /spec_plan_implement 開始實作 user-auth
 
 # 步驟 4：完成歸檔
-/spec_plan_acomplish user-auth 完成了
+/spec_plan_accomplish user-auth 完成了
 ```
 
 ### 情境 2：修復 Bug
@@ -121,7 +121,7 @@ your-project/
 
    - 方案 → `@fastplan/plan/`
    - Bug → `@fastplan/bug/`
-   - 完成 → `@fastplan/acomplish/`
+   - 完成 → `@fastplan/accomplish/`
 
 ### 📝 方案文件包含
 
@@ -160,8 +160,8 @@ your-project/
 → 更新主計畫
 
 第 6 步：歸檔
-→ /spec_plan_acomplish
-→ 移到 acomplish/
+→ /spec_plan_accomplish
+→ 移到 accomplish/
 ```
 
 ---
@@ -192,10 +192,10 @@ your-project/
 - 依照里程碑逐步實作
 - 勾選完成的子任務
 
-### `/spec_plan_acomplish`
+### `/spec_plan_accomplish`
 
 1. 刪除臨時文件
-2. 移動到 acomplish/
+2. 移動到 accomplish/
 3. 處理衝突
 
 ### `/spec_bugPlan_proposal`
@@ -234,7 +234,7 @@ your-project/
 2. 搜尋程式碼
 3. 分析原理
 4. 提供說明與示例
-5. 輸出到 architecture&content/
+5. 輸出到 knowledge/
 
 ### `/spec_check_code_architecture`
 
@@ -242,7 +242,7 @@ your-project/
 2. 搜尋整理程式碼
 3. 歸納核心概念
 4. 提供簡潔說明
-5. 輸出到 architecture&content/
+5. 輸出到 knowledge/
 
 </details>
 
@@ -255,13 +255,13 @@ your-project/
 | `/spec_plan_proposal`           | 新功能規劃    | `@fastplan/plan/`       |
 | `/spec_plan_modify`             | 修改方案      | `@fastplan/plan/`       |
 | `/spec_plan_implement`          | 實作          | 程式碼                    |
-| `/spec_plan_acomplish`          | 歸檔          | `@fastplan/acomplish/`  |
+| `/spec_plan_accomplish`         | 歸檔          | `@fastplan/accomplish/` |
 | `/spec_bugPlan_proposal`        | Bug 規劃      | `@fastplan/bug/`        |
 | `/spec_bugPlan_modify`          | 修改 Bug 方案 | `@fastplan/bug/`        |
 | `/spec_bugPlan_implement`       | 修復          | 程式碼                    |
 | `/spec_merge_bugplan_plan`      | 合併          | `@fastplan/plan/`       |
-| `/spec_find_why`                | 探索原理      | `architecture&content/` |
-| `/spec_check_code_architecture` | 檢查架構      | `architecture&content/` |
+| `/spec_find_why`                | 探索原理      | `@fastplan/knowledge/`  |
+| `/spec_check_code_architecture` | 檢查架構      | `@fastplan/knowledge/`  |
 
 ---
 
