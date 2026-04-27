@@ -1,12 +1,17 @@
-# 目標：
+# 目的
 
-刪除@`@fastplan/plan/[提案簡稱]_plan_modify.md`、`@fastplan/plan/[提案簡稱]_plan_summary.md`，並將 `@fastplan/plan/[提案簡稱]_plan.md` 移動到 `@fastplan/acomplish/（檔名不變）`。
+將 `@fastplan/plan/[提案簡稱]_plan.md` 移動到 `@fastplan/accomplish/`，並刪除相關暫存檔案。
 
-# 規則：
+# 作業流程
 
-1) 若 @fastplan/acomplish 不存在，先建立再移動到 @fastplan/acomplish/（檔名不變）。
-2) 若目標資料夾已有同名檔案，將欲移動之檔案更名為「`[提案簡稱]_plan_backup_YYYYMMDD_HHMMSS`」後再移動，並回報衝突處理。
-3) 請輸出「動作摘要」：刪除清單、移動前後路徑、是否發生衝突與結果、成功/失敗狀態。
+1. 刪除 `@fastplan/plan/[提案簡稱]_plan_modify.md`（若存在）
+2. 移動 `@fastplan/plan/[提案簡稱]_plan.md` 到 `@fastplan/accomplish/`
+   * 若 `@fastplan/accomplish` 不存在，先建立
+   * 若目標已有同名檔案，更名為 `[提案簡稱]_plan_backup_YYYYMMDD_HHMMSS` 再移動，並回報衝突處理
+
+# 命名規範
+
+* **提案簡稱** ：使用小寫、連字號，例：`task-refactor`、`onboarding-flow`。
 
 # 使用語言
 
