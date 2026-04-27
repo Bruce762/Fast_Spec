@@ -1,0 +1,19 @@
+# 目的
+
+對使用者提出的改動，調研並更新 `@fastplan/plan/[提案簡稱]_plan.md`（不需實作）。
+
+# 作業流程
+
+1. 針對使用者的改動進行調研
+2. 查閱 `@fastplan/plan/[提案簡稱]_plan.md` 與相關程式
+3. 比較差異，有疑問向使用者提問，思考後規劃改動內容
+4. 將修訂內容更新至 `@fastplan/plan/[提案簡稱]_plan.md`
+5. 建立 `@fastplan/plan/[提案簡稱]_plan_modify.md`，簡短說明此次修改內容
+
+# 命名規範
+* **提案簡稱** ：使用小寫、連字號，例：`task-refactor`、`onboarding-flow`。
+* **路徑固定** ：`@fastplan/plan/[提案簡稱]_plan_modify.md`
+
+# 使用語言
+
+使用與使用者相同的語言即可
