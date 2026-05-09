@@ -26,7 +26,7 @@ fastplan/
 | 指令 | 功能 |
 |------|------|
 | `/spec_plan_proposal` | 根據需求建立計劃文件 `fastplan/plan/[名稱]_plan.md` |
-| `/spec_plan_modify` | 修改現有計劃，並產生 `_plan_modify.md` 說明異動 |
+| `/spec_plan_modify` | 修改現有計劃 |
 | `/spec_plan_findbug` | 審查計劃邏輯，找出 bug、矛盾或遺漏（不實作）|
 | `/spec_plan_implement` | 依計劃實作程式，完成後將計劃移至 `pending_test/` |
 | `/spec_plan_accomplish` | 測試通過後，將計劃歸檔至 `accomplish/` |
@@ -70,7 +70,7 @@ AI：建立 fastplan/plan/user-login_plan.md
 AI：發現未處理 token 過期的情境，建議補上 refresh 邏輯
 
 你：/spec_plan_modify user-login 補上 token refresh 機制
-AI：更新 user-login_plan.md，建立 user-login_plan_modify.md 記錄本次異動
+AI：更新 user-login_plan.md
 ```
 
 確認計劃沒問題，開始實作：
@@ -95,7 +95,6 @@ AI：user-login_plan.md 歸檔至 fastplan/accomplish/
 
 生成檔案路徑：
 - `fastplan/plan/[名稱]_plan.md`
-- `fastplan/plan/[名稱]_plan_modify.md`（修改記錄）
 - `fastplan/pending_test/[名稱]_plan.md`（實作後）
 - `fastplan/accomplish/[名稱]_plan.md`（歸檔後）
 

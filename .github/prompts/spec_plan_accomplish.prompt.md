@@ -7,11 +7,10 @@
 1. 判斷計畫檔案位置：
    * 優先檢查 `@fastplan/pending_test/[提案簡稱]_plan.md` 是否存在
    * 若不存在，再檢查 `@fastplan/plan/[提案簡稱]_plan.md`
-2. 刪除 `@fastplan/plan/[提案簡稱]_plan_modify.md`（若存在）
-3. 移動找到的計畫檔案到 `@fastplan/accomplish/`
+2. 移動找到的計畫檔案到 `@fastplan/accomplish/`
    * 若 `@fastplan/accomplish` 不存在，先建立
    * 若目標已有同名檔案，直接覆蓋
-4. 告知使用者計畫已歸檔至 accomplish，並說明來源資料夾
+3. 告知使用者計畫已歸檔至 accomplish，並說明來源資料夾
 
 # 命名規範
 
