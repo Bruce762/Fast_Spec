@@ -22,8 +22,8 @@ fastplan/
 ## 指令總覽
 
 支援兩種呼叫方式，功能完全相同：
-- **Skill**（推薦）：`/spec [子指令]`，例如 `/spec proposal`
-- **Command**：`/spec_plan_proposal`、`/spec_plan_implement` …
+- **Command**（推薦）：`/spec_plan_proposal`、`/spec_plan_implement` …
+- **Skill**：`/spec [子指令]`，例如 `/spec proposal`
 
 ### 計劃生命週期
 
@@ -111,6 +111,6 @@ AI：user-login_plan.md 歸檔至 fastplan/accomplish/
 | Skill `/spec` | `.claude/skills/spec/` | 專案 `.claude/skills/spec/` |
 | Command `/spec_*` | `.claude/commands/` 或 `commands/` | 專案 `.claude/commands/` |
 
-擇一安裝即可，推薦使用 Skill。
+擇一安裝即可，推薦使用 Command。
 
 <!-- last-synced-commit: 1d40a3a4ef0298e2f21971da397ee29c9e980cfd -->
