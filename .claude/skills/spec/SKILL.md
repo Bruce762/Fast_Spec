@@ -1,6 +1,6 @@
 ---
 name: spec
-description: 統一規劃與開發工作流程入口。子指令：proposal（規劃方案）、implement（實施）、modify（修改方案）、findbug（找 bug）、accomplish（歸檔）、check-architecture（了解架構）、find-why（解釋原因）、sync-readme（同步 README）。呼叫格式：/spec [子指令] [提案簡稱]
+description: 統一規劃與開發工作流程入口。子指令：proposal（規劃方案）、implement（實施）、modify（修改方案）、findbug（找 bug）、accomplish（歸檔）、check-architecture（了解架構）、find-why（解釋原因）、sync-readme（同步 README 並維護 CHANGELOG.md）。呼叫格式：/spec [子指令] [提案簡稱]
 disable-model-invocation: false
 ---
 
