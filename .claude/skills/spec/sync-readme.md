@@ -18,8 +18,8 @@
 ### 步驟 2：檢查是否有新的 commit
 
 ```bash
-git log --oneline <BASE_COMMIT>..HEAD   # 有 BASE_COMMIT 時
-git log --oneline                        # 無 BASE_COMMIT 時
+git log --oneline <BASE_COMMIT>..HEAD -- . ':(exclude)CHANGELOG.md' ':(exclude)README.md' ':(exclude)CLAUDE.md'   # 有 BASE_COMMIT 時
+git log --oneline -- . ':(exclude)CHANGELOG.md' ':(exclude)README.md' ':(exclude)CLAUDE.md'                        # 無 BASE_COMMIT 時
 ```
 
 若輸出為空，或 HEAD 與 BASE_COMMIT 相同 → 告知使用者無新 commit，直接結束，不修改任何檔案。
@@ -27,8 +27,8 @@ git log --oneline                        # 無 BASE_COMMIT 時
 ### 步驟 3：理解變動內容
 
 ```bash
-git diff <BASE_COMMIT>..HEAD            # 有 BASE_COMMIT 時
-git diff $(git rev-list --max-parents=0 HEAD)..HEAD  # 無 BASE_COMMIT 時
+git diff <BASE_COMMIT>..HEAD -- . ':(exclude)CHANGELOG.md' ':(exclude)README.md' ':(exclude)CLAUDE.md'            # 有 BASE_COMMIT 時
+git diff $(git rev-list --max-parents=0 HEAD)..HEAD -- . ':(exclude)CHANGELOG.md' ':(exclude)README.md' ':(exclude)CLAUDE.md'  # 無 BASE_COMMIT 時
 ```
 
 閱讀 diff 內容，理解這些 commit **實際做了什麼事**。重點是語意上發生了什麼，不是逐檔列出。
@@ -39,7 +39,7 @@ git diff $(git rev-list --max-parents=0 HEAD)..HEAD  # 無 BASE_COMMIT 時
 
 1. 取得本次範圍的 commit 清單（用短 hash）：
    ```bash
-   git log --pretty=format:'- %h %s' <BASE_COMMIT>..HEAD
+   git log --pretty=format:'- %h %s' <BASE_COMMIT>..HEAD -- . ':(exclude)CHANGELOG.md' ':(exclude)README.md' ':(exclude)CLAUDE.md'
    ```
 2. 組出本次的新區段，格式如下：
    ```markdown
