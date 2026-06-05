@@ -32,6 +32,7 @@ fastplan/
 
 | 子指令 | Command 對應 | 功能 |
 |--------|-------------|------|
+| `discuss` | `/spec_plan_discuss` | 多輪討論釐清需求，**嚴禁實作程式碼**，討論完再執行 proposal |
 | `proposal` | `/spec_plan_proposal` | 依需求建立 `fastplan/plan/[名稱]_plan.md`，含預期改動 |
 | `modify` | `/spec_plan_modify` | 修改現有計劃 |
 | `findbug` | `/spec_plan_findbug` | 審查計劃邏輯，找出 bug、矛盾或遺漏（不實作） |
@@ -51,15 +52,16 @@ fastplan/
 ## 標準工作流
 
 ```
-proposal → (modify) → findbug → implement → 手動測試 → accomplish
+discuss → proposal → (modify) → findbug → implement → 手動測試 → accomplish
 ```
 
-1. `/spec_plan_proposal` — 描述需求，生成計劃
-2. `/spec_plan_modify` — 視需求調整計劃（可選）
-3. `/spec_plan_findbug` — 審查計劃，找出風險與遺漏
-4. `/spec_plan_implement` — 實作，計劃自動移至 `pending_test/`
-5. 手動測試
-6. `/spec_plan_accomplish` — 歸檔，計劃移至 `accomplish/`
+1. `/spec_plan_discuss` — 與 AI 多輪討論需求（嚴禁實作）
+2. `/spec_plan_proposal` — 描述需求，生成計劃（原步驟 1 順延）
+3. `/spec_plan_modify` — 視需求調整計劃（可選）
+4. `/spec_plan_findbug` — 審查計劃，找出風險與遺漏
+5. `/spec_plan_implement` — 實作，計劃自動移至 `pending_test/`
+6. 手動測試
+7. `/spec_plan_accomplish` — 歸檔，計劃移至 `accomplish/`
 
 ---
 
