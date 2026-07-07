@@ -6,8 +6,8 @@
 
 ## Superpowers Skills
 
-- **REQUIRED SUB-SKILL**：需求確認明確後、撰寫方案文件前，先呼叫 `superpowers:writing-plans` skill，依其結構撰寫計劃。
-- 若需求仍模糊且尚未經過 `/spec discuss` 階段，先呼叫 `superpowers:brainstorming` skill 釐清需求。
+- **REQUIRED SUB-SKILL**：需求確認明確後、撰寫方案文件前，先呼叫 `superpowers:writing-plans` skill，借用其「拆解任務、標註可驗證步驟」的思路撰寫計劃。**但以下三點由本指令控制、覆寫之**：① 文件結構仍由 AI 依提案性質自行組織（只需含下方規定的必含章節），不強制套用其固定 Header／模板；② 存檔路徑以 `@fastplan/plan/[提案簡稱]_plan.md` 為準，不使用其預設的 `docs/superpowers/plans/` 路徑；③ 不執行其結尾的 Execution Handoff（不自動進入實作）。
+- 若需求仍模糊且尚未經過 `/spec discuss` 階段，先呼叫 `superpowers:brainstorming` skill 釐清需求；**同樣只借用其提問釐清，不寫 design doc 檔、不自動轉入 writing-plans**。
 
 ## 作業流程
 

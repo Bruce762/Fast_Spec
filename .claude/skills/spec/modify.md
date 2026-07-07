@@ -6,7 +6,7 @@
 
 ## Superpowers Skills
 
-**REQUIRED SUB-SKILL**：更新方案文件時，呼叫 `superpowers:writing-plans` skill，依其結構修訂計劃。
+**REQUIRED SUB-SKILL**：更新方案文件時，呼叫 `superpowers:writing-plans` skill，借用其「拆解任務、標註可驗證步驟」的思路修訂計劃。**但以下三點由本指令控制、覆寫之**：① 文件結構仍由 AI 依提案性質自行組織，不強制套用其固定 Header／模板；② 存檔路徑以既有計劃檔位置為準（依作業流程處理 `@fastplan/plan/` 與 `@fastplan/pending_test/`），不使用其預設的 `docs/superpowers/plans/` 路徑；③ 不執行其結尾的 Execution Handoff（不自動進入實作）。
 
 ## 作業流程
 
