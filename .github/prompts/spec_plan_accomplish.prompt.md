@@ -1,17 +1,21 @@
 # 目的
 
-將計畫檔案（來自 `@fastplan/plan/` 或 `@fastplan/pending_test/`）移動到 `@fastplan/accomplish/`，並刪除相關暫存檔案。
+將 `@fastplan/pending_test/` 中的計畫檔案移動到 `@fastplan/accomplish/`，並刪除相關暫存檔案。只有經過 implement 的計畫（位於 `pending_test/`）才能歸檔。
+
+# Superpowers Skills
+
+若目前位於 feature branch（非 main／master）上開發，歸檔後呼叫 `superpowers:finishing-a-development-branch` skill，引導完成 merge、建 PR 或清理分支的決策。選擇 merge 時**預設建議 squash merge**，維持主幹「一個提案＝一個 commit」；需要保留任務級歷史時才用一般 merge。
 
 # 作業流程
 
-1. 判斷計畫檔案位置：
-   * 優先檢查 `@fastplan/pending_test/[提案簡稱]_plan.md` 是否存在
-   * 若不存在，再檢查 `@fastplan/plan/[提案簡稱]_plan.md`
-2. 移動找到的計畫檔案到 `@fastplan/accomplish/`
+1. 檢查 `@fastplan/pending_test/[提案簡稱]_plan.md` 是否存在
+   * 若不存在，告知使用者該計畫尚未實作（或不存在），需先執行 `/spec_plan_implement [提案簡稱]`，直接結束
+2. 移動計畫檔案到 `@fastplan/accomplish/`
    * 若 `@fastplan/accomplish` 不存在，先建立
    * 若目標已有同名檔案，直接覆蓋
 3. 刪除相關暫存檔案：若 `@fastplan/bug/[提案簡稱]_bugs.md` 存在，一併刪除
-4. 告知使用者計畫已歸檔至 accomplish，說明來源資料夾與已清理的暫存檔案
+4. 若目前位於 feature branch，呼叫 `superpowers:finishing-a-development-branch` 引導 merge／PR／清理分支（merge 預設建議 squash）
+5. 告知使用者計畫已歸檔至 accomplish，並說明已清理的暫存檔案
 
 # 命名規範
 

@@ -101,7 +101,7 @@ fastplan/
 └── knowledge/     # check-architecture / find-why 產出的技術說明
 ```
 
-> 所有 `.md` 文件（含檔名）皆由指令**自動生成與管理**，請勿手動建立或編輯。
+> 所有 `.md` 文件（含檔名）皆由指令**自動生成與管理**，請勿手動建立或編輯。唯一例外：**放棄提案**時，直接手動刪除 `plan/` 中的計劃檔與 `bug/` 中的對應報告即可。
 
 ---
 
@@ -148,12 +148,16 @@ AI：user-login_plan.md 歸檔至 fastplan/accomplish/，並清理 bug 報告
 | `discuss` | `brainstorming` | 開始討論前（必用） |
 | `proposal` | `writing-plans`、`brainstorming` | 撰寫方案前（必用）；需求模糊且未經 discuss 時 |
 | `implement` | `test-driven-development`、`verification-before-completion` | 實作時、宣告完成前（必用） |
+| `implement` | `requesting-code-review` | 改動涉及多檔案、安全敏感邏輯或核心資料流時，移交前審查 diff（條件式） |
+| `implement` | `using-git-worktrees` | 改動範圍大時，實作前建立隔離工作區（條件式） |
+| `implement` | `subagent-driven-development` | 計劃含多個獨立任務時，平行派發子代理執行；會先建 feature branch，不在主幹上逐任務 commit（條件式） |
+| `accomplish` | `finishing-a-development-branch` | 位於 feature branch 時，歸檔後引導 merge／PR／清理分支，merge 預設 squash 維持主幹一提案一 commit（條件式） |
 | `verify` | `verification-before-completion` | 執行驗證時（必用） |
 | `modify` | `writing-plans` | 修訂方案時（必用） |
 | `findbug` | `systematic-debugging` | 涉及實際發生的錯誤時（條件式） |
 | `find-why` | `systematic-debugging` | 追查現象根因時（必用） |
 
-`accomplish`、`check-architecture`、`sync-readme` 為純檔案／文件操作，不使用 superpowers。
+`check-architecture`、`sync-readme` 為純檔案／文件操作，不使用 superpowers。
 
 ---
 
