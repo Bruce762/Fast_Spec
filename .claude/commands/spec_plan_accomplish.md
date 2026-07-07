@@ -4,7 +4,7 @@
 
 # Superpowers Skills
 
-若目前位於 feature branch（非 main／master）上開發，歸檔後呼叫 `superpowers:finishing-a-development-branch` skill，引導完成 merge、建 PR 或清理分支的決策。選擇 merge 時**預設建議 squash merge**，維持主幹「一個提案＝一個 commit」；需要保留任務級歷史時才用一般 merge。
+若目前位於 feature branch（非 main／master）上開發，歸檔後呼叫 `superpowers:finishing-a-development-branch` skill，引導完成 merge 或清理分支的決策。**但以下由本指令覆寫之：嚴禁 push 到遠端、嚴禁建立 PR，只允許本地 merge 與分支清理；需要推上遠端時由使用者自行手動 push。** 選擇 merge 時**預設建議 squash merge**，維持主幹「一個提案＝一個 commit」；需要保留任務級歷史時才用一般 merge。
 
 # 作業流程
 
@@ -14,7 +14,7 @@
    * 若 `@fastplan/accomplish` 不存在，先建立
    * 若目標已有同名檔案，直接覆蓋
 3. 刪除相關暫存檔案：若 `@fastplan/bug/[提案簡稱]_bugs.md` 存在，一併刪除
-4. 若目前位於 feature branch，呼叫 `superpowers:finishing-a-development-branch` 引導 merge／PR／清理分支（merge 預設建議 squash）
+4. 若目前位於 feature branch，呼叫 `superpowers:finishing-a-development-branch` 引導 merge／清理分支（merge 預設建議 squash）。**嚴禁 push 到遠端、嚴禁建立 PR**
 5. 告知使用者計畫已歸檔至 accomplish，並說明已清理的暫存檔案
 
 # 命名規範
