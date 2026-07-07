@@ -4,6 +4,10 @@
 
 與使用者進行多輪討論與提問，釐清需求與方向，為後續 proposal 做準備。
 
+## Superpowers Skills
+
+**REQUIRED SUB-SKILL**：開始討論前，先呼叫 `superpowers:brainstorming` skill，依其流程探索使用者意圖、需求與設計方向。
+
 ## 規則
 
 **此階段嚴禁實作任何程式碼。**

@@ -10,7 +10,8 @@
 2. 移動找到的計畫檔案到 `@fastplan/accomplish/`
    * 若 `@fastplan/accomplish` 不存在，先建立
    * 若目標已有同名檔案，直接覆蓋
-3. 告知使用者計畫已歸檔至 accomplish，並說明來源資料夾
+3. 刪除相關暫存檔案：若 `@fastplan/bug/[提案簡稱]_bugs.md` 存在，一併刪除
+4. 告知使用者計畫已歸檔至 accomplish，說明來源資料夾與已清理的暫存檔案
 
 # 命名規範
 

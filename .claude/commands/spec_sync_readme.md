@@ -94,6 +94,22 @@ git diff $(git rev-list --max-parents=0 HEAD)..HEAD -- . ':(exclude)CHANGELOG.md
 
 **原則：只改有關聯的地方，維持 CLAUDE.md 原本的結構與風格，不另開新區塊。CLAUDE.md 內容應精簡，不重複 README 的描述性內容。**
 
+## 步驟 8：同步指令副本（僅適用於指令集原始 repo）
+
+**觸發條件**：專案根目錄同時存在 `commands/` 與 `.claude/skills/spec/`（代表這是 fast_spec 指令集本身的 repo）。不符合條件則跳過此步驟。
+
+以 `commands/` 為準，逐一檢查並同步以下三份副本：
+
+1. `.claude/commands/[同名].md` — 內容需與 `commands/` 完全一致，不一致則直接覆蓋
+2. `.github/prompts/[同名].prompt.md` — 內容需與 `commands/` 完全一致，不一致則直接覆蓋
+3. `.claude/skills/spec/[子指令名].md` — 內容相同，但格式轉換：
+   * 檔案開頭為 `# [子指令] — [中文名]` 標題行，其餘標題層級降一級（`#` → `##`）
+   * 指令參照轉為 skill 呼叫格式：`/spec_plan_◯◯` → `/spec ◯◯`
+
+**指令參照格式原則**：`commands/`（及其直接複製的兩份副本）內文中提及其他指令時，一律使用完整指令名（`/spec_plan_◯◯`）；`/spec ◯◯` 短格式僅存在於 skill 版轉換後的檔案中。
+
+若 `commands/` 有新增或刪除指令，同步更新 `.claude/skills/spec/SKILL.md` 的子指令對照表與 frontmatter description。
+
 ---
 
 # 使用語言

@@ -4,6 +4,10 @@
 
 針對使用者困惑的現象或行為，搜尋整理相關程式碼與技術資料，說明「為什麼會這樣」的原因，附上示例，輸出至 `@fastplan/knowledge`。
 
+## Superpowers Skills
+
+**REQUIRED SUB-SKILL**：追查現象根因時，呼叫 `superpowers:systematic-debugging` skill，依其流程系統性定位原因（僅到找出並說明原因為止，不實作修復）。
+
 ## 作業流程
 
 1. 讀取使用者問題（若未明確說明，引導描述困惑的現象）
