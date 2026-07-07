@@ -4,7 +4,9 @@
 
 # Superpowers Skills
 
-**REQUIRED SUB-SKILL**：開始討論前，先呼叫 `superpowers:brainstorming` skill，依其流程探索使用者意圖、需求與設計方向。
+**REQUIRED SUB-SKILL**：開始討論前，先呼叫 `superpowers:brainstorming` skill，借用其「多輪提問、探索使用者意圖與需求方向」的流程。
+
+**覆寫 brainstorming 的收尾**：本階段**不寫任何 design doc 檔、不 commit、也不進入 writing-plans**。討論結論只以對話呈現，實際計劃檔留給 `/spec_plan_proposal` 建立。
 
 # 規則
 
