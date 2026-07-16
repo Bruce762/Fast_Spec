@@ -58,7 +58,7 @@
 | `findbug` | `/spec_plan_findbug` | 審查計劃邏輯，找出 bug、矛盾或遺漏（不實作），發現問題時輸出報告至 `fastplan/bug/` |
 | `implement` | `/spec_plan_implement` | 在 `feature/[名稱]` 分支上依計劃實作（不直接 commit 主幹），完成後將計劃移至 `pending_test/` |
 | `verify` | `/spec_plan_verify` | 依計劃逐項實際驗證改動效果，通過提示歸檔、未通過記錄問題；驗證前檢查 checkout 位於對應 feature branch |
-| `accomplish` | `/spec_plan_accomplish` | 測試通過後歸檔至 `accomplish/`、清理 `fastplan/bug/` 的對應報告，並引導 merge 回主幹（預設 `--no-ff`） |
+| `accomplish` | `/spec_plan_accomplish` | 測試通過後歸檔至 `accomplish/`、清理 `fastplan/bug/` 的對應報告，並自動 merge 回主幹（預設 squash，一提案一 commit）、刪除分支 |
 
 ### 知識與維護
 
@@ -82,7 +82,7 @@ discuss → proposal → (modify) → findbug → implement → verify → accom
 4. `/spec_plan_findbug` — 審查計劃，找出風險與遺漏
 5. `/spec_plan_implement` — 在 `feature/[名稱]` 分支上實作，計劃自動移至 `pending_test/`
 6. `/spec_plan_verify` — AI 依計劃逐項實際驗證改動效果（可選，也可純手動測試；需在該 feature branch 上執行）
-7. `/spec_plan_accomplish` — 歸檔，計劃移至 `accomplish/`，並 merge 分支回主幹
+7. `/spec_plan_accomplish` — 歸檔，計劃移至 `accomplish/`，並自動 squash merge 分支回主幹、刪除分支
 
 > 測試（verify 或手動）發現問題時，直接執行 `/spec_plan_modify`——計劃會自動從 `pending_test/` 退回 `plan/`，修改後重新 implement 即可。
 
@@ -151,7 +151,6 @@ AI：user-login_plan.md 歸檔至 fastplan/accomplish/，並清理 bug 報告
 | `implement` | `requesting-code-review` | 改動涉及多檔案、安全敏感邏輯或核心資料流時，移交前審查 diff（條件式） |
 | `implement` | `using-git-worktrees` | 改動範圍大時，實作前建立隔離工作區（條件式） |
 | `implement` | `subagent-driven-development` | 計劃含多個獨立任務時，平行派發子代理執行，不在主幹上逐任務 commit（條件式） |
-| `accomplish` | `finishing-a-development-branch` | 位於 feature branch 時，歸檔後引導 merge／清理分支，merge 預設 `--no-ff` 保留任務級 commit（條件式） |
 | `verify` | `verification-before-completion` | 執行驗證時（必用） |
 | `modify` | `writing-plans` | 修訂方案時（必用） |
 | `findbug` | `systematic-debugging` | 涉及實際發生的錯誤時（條件式） |

@@ -14,6 +14,8 @@
 
 ## 作業流程
 
+> **禁止事項**：本指令全程不得建立或修改 `README.md` 與 `CHANGELOG.md`；這兩份文件的同步一律由 `/spec sync-readme` 指令負責。（步驟 7 的 `CLAUDE.md` 更新不受此限。）
+
 1. 讀取 `@fastplan/plan/[提案簡稱]_plan.md`
    * 若不存在，檢查 `@fastplan/pending_test/[提案簡稱]_plan.md`：若在該處，告知使用者計劃已實作過，可執行 `/spec verify` 或 `/spec modify`，直接結束
    * 兩處都不存在 → 告知使用者需先執行 `/spec proposal [提案簡稱]` 建立計劃，直接結束
