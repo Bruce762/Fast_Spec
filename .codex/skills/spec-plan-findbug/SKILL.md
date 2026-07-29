@@ -1,14 +1,19 @@
-# findbug — 找 Bug
+---
+name: spec-plan-findbug
+description: Use when the user invokes `$spec-plan-findbug` or asks to review a named pre-implementation spec plan for bugs, risks, omissions, or contradictions without fixing code.
+---
 
-## 目的
+# Spec plan findbug
+
+# 目的
 
 完整檢視 `@fastplan/plan/[提案簡稱]_plan.md` 的內容，對照相關程式碼，找出計劃中的潛在 bug、邏輯矛盾、遺漏情境或不可行的假設，並整理回報（不需實作修復）。
 
-## Superpowers Skills
+# Superpowers Skills
 
 若檢視過程涉及實際發生的錯誤或非預期行為（不只是計劃層面的風險），呼叫 `superpowers:systematic-debugging` skill 追查根因（僅到找出原因為止，不實作修復）。
 
-## 作業流程
+# 作業流程
 
 1. 讀取 `@fastplan/plan/[提案簡稱]_plan.md`
    * 若不存在，告知使用者該計劃不存在或已實作（findbug 僅適用於實作前的計劃），直接結束
@@ -19,16 +24,16 @@
    * 若目標已有同名檔案，直接覆蓋
 5. 若計劃無明顯問題，明確回報「未發現 bug」，不需輸出報告檔案
 
-## 輸出後提示
+# 輸出後提示
 
 發現問題並輸出報告後，必須在回覆末尾加上以下提示：
 
-> Bug 報告已輸出至 `fastplan/bug/`。若要修正計劃，請執行 `/spec modify [提案簡稱]`。
+> Bug 報告已輸出至 `fastplan/bug/`。若要修正計劃，請執行 `$spec-plan-modify [提案簡稱]`。
 
-## 命名規範
+# 命名規範
 
 * **提案簡稱**：使用小寫、連字號，例：`task-refactor`、`onboarding-flow`
 
-## 使用語言
+# 使用語言
 
 使用與使用者相同的語言即可

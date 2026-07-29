@@ -1,0 +1,4 @@
+interface:
+  display_name: "Spec Plan Discuss"
+  short_description: "Help with Spec Plan Discuss tasks"
+  default_prompt: "Use $spec-plan-discuss to run this project workflow."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Spec Plan Implement"
+  short_description: "Help with Spec Plan Implement tasks"
+  default_prompt: "Use $spec-plan-implement to run this project workflow."

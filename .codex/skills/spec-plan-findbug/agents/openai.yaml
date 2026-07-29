@@ -1,0 +1,4 @@
+interface:
+  display_name: "Spec Plan Findbug"
+  short_description: "Help with Spec Plan Findbug tasks"
+  default_prompt: "Use $spec-plan-findbug to run this project workflow."

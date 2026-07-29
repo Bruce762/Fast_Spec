@@ -1,0 +1,4 @@
+interface:
+  display_name: "Spec Find Why"
+  short_description: "Help with Spec Find Why tasks"
+  default_prompt: "Use $spec-find-why to run this project workflow."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Spec Check Architecture"
+  short_description: "Help with Spec Check Architecture tasks"
+  default_prompt: "Use $spec-check-architecture to run this project workflow."

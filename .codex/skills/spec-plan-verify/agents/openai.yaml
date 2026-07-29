@@ -1,0 +1,4 @@
+interface:
+  display_name: "Spec Plan Verify"
+  short_description: "Help with Spec Plan Verify tasks"
+  default_prompt: "Use $spec-plan-verify to run this project workflow."

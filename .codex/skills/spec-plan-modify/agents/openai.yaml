@@ -1,0 +1,4 @@
+interface:
+  display_name: "Spec Plan Modify"
+  short_description: "Help with Spec Plan Modify tasks"
+  default_prompt: "Use $spec-plan-modify to run this project workflow."

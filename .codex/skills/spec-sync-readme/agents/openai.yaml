@@ -1,0 +1,4 @@
+interface:
+  display_name: "Spec Sync Readme"
+  short_description: "Help with Spec Sync Readme tasks"
+  default_prompt: "Use $spec-sync-readme to run this project workflow."

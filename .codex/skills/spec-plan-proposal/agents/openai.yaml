@@ -1,0 +1,4 @@
+interface:
+  display_name: "Spec Plan Proposal"
+  short_description: "Help with Spec Plan Proposal tasks"
+  default_prompt: "Use $spec-plan-proposal to run this project workflow."

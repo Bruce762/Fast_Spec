@@ -1,17 +1,22 @@
-# proposal — 規劃方案
+---
+name: spec-plan-proposal
+description: Use when the user invokes `$spec-plan-proposal` or asks to create a named implementation proposal in `fastplan/plan` without changing code.
+---
 
-## 目的
+# Spec plan proposal
+
+# 目的
 
 針對使用者的問題去計劃要怎麼做，統一存放於 `@fastplan/plan`
 
-## Superpowers Skills
+# Superpowers Skills
 
 - **REQUIRED SUB-SKILL**：需求確認明確後、撰寫方案文件前，先呼叫 `superpowers:writing-plans` skill，借用其「拆解任務、標註可驗證步驟」的思路撰寫計劃。**但以下三點由本指令控制、覆寫之**：① 文件結構仍由 AI 依提案性質自行組織（只需含下方規定的必含章節），不強制套用其固定 Header／模板；② 存檔路徑以 `@fastplan/plan/[提案簡稱]_plan.md` 為準，不使用其預設的 `docs/superpowers/plans/` 路徑；③ 不執行其結尾的 Execution Handoff（不自動進入實作）。
-- 若需求仍模糊且尚未經過 `/spec discuss` 階段，先呼叫 `superpowers:brainstorming` skill 釐清需求；**同樣只借用其提問釐清，不寫 design doc 檔、不自動轉入 writing-plans**。
+- 若需求仍模糊且尚未經過 `$spec-plan-discuss` 階段，先呼叫 `superpowers:brainstorming` skill 釐清需求；**同樣只借用其提問釐清，不寫 design doc 檔、不自動轉入 writing-plans**。
 
-## 作業流程
+# 作業流程
 
-> **禁止事項**：本指令全程不得建立或修改 `README.md` 與 `CHANGELOG.md`；這兩份文件的同步一律由 `/spec sync-readme` 指令負責。
+> **禁止事項**：本指令全程不得建立或修改 `README.md` 與 `CHANGELOG.md`；這兩份文件的同步一律由 `$spec-sync-readme` 指令負責。
 
 1. **理解與需求澄清**
    * 讀取使用者問題。
@@ -26,15 +31,15 @@
        * 好例：「同一帳號連續登入失敗 5 次後，第 6 次回傳 429」
      * **待解決問題**：初始為空，implement／verify 過程發現的新問題記錄於此。
 
-## 命名規範
+# 命名規範
 * **提案簡稱** ：使用小寫、連字號，例：`task-refactor`、`onboarding-flow`。
 * **路徑固定** ：`@fastplan/plan/[提案簡稱]_plan.md`
 
-## 輸出後提示
+# 輸出後提示
 
 方案文件輸出完畢後，必須在回覆末尾加上以下提示：
 
-> 方案已建立。若要開始實作，請執行 `/spec implement [提案簡稱]`。尚未執行 implement 前，請勿自行修改任何程式碼。
+> 方案已建立。若要開始實作，請執行 `$spec-plan-implement [提案簡稱]`。尚未執行 implement 前，請勿自行修改任何程式碼。
 
-## 使用語言
+# 使用語言
 使用與使用者相同的語言即可

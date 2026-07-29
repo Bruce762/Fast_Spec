@@ -1,3 +1,10 @@
+---
+name: spec-sync-readme
+description: Use when the user invokes `$spec-sync-readme` or asks to update README, CHANGELOG, and applicable instruction copies from commits since the previous sync.
+---
+
+# Spec sync README
+
 # 目的
 
 掃描自上次紀錄以來的 git commit，理解程式實際發生了什麼變化，然後判斷 README.md 哪些地方需要對應更新，直接融入原有內容。若無新 commit 或無變動則不修改，直接結束。
@@ -32,7 +39,6 @@ git diff $(git rev-list --max-parents=0 HEAD)..HEAD -- . ':(exclude)CHANGELOG.md
 ```
 
 閱讀 diff 內容，理解這些 commit **實際做了什麼事**，例如：
-
 - 新增了某個功能、指令、設定
 - 修改了某段邏輯或說明
 - 移除了某些檔案或功能
@@ -58,7 +64,6 @@ git diff $(git rev-list --max-parents=0 HEAD)..HEAD -- . ':(exclude)CHANGELOG.md
    **改動摘要**：
    <1–3 段語意說明這次到底做了什麼。重點是「做了什麼、為什麼」，不要把 commit message 串起來貼上。>
    ```
-
    - 日期用今天的日期（YYYY-MM-DD）
    - `<base_short>` 為 BASE_COMMIT 的短 hash；首次執行（無 BASE_COMMIT）時用 `initial`
    - `<head_short>` 為 `git rev-parse --short HEAD` 結果
@@ -71,7 +76,6 @@ git diff $(git rev-list --max-parents=0 HEAD)..HEAD -- . ':(exclude)CHANGELOG.md
 ## 步驟 5：判斷 README.md 哪裡需要更新
 
 讀取整份 `README.md`，依據步驟 3 理解的變動，判斷：
-
 - 哪些段落、表格、說明與這次變動有關
 - 是否有新功能需要補上、舊描述需要修正、已移除的內容需要刪除
 
@@ -90,7 +94,6 @@ git diff $(git rev-list --max-parents=0 HEAD)..HEAD -- . ':(exclude)CHANGELOG.md
 ## 步驟 7：同步更新 CLAUDE.md 與 AGENTS.md（若存在）
 
 分別檢查專案根目錄的 `CLAUDE.md` 與 `AGENTS.md`。任一檔案存在時，依據步驟 3 理解的變動，判斷該檔案哪些段落需要對應更新：
-
 - 新增/移除的模組或服務
 - 執行指令的變動
 - 目錄結構的異動

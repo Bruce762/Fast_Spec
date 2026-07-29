@@ -1,0 +1,4 @@
+interface:
+  display_name: "Spec Plan Accomplish"
+  short_description: "Help with Spec Plan Accomplish tasks"
+  default_prompt: "Use $spec-plan-accomplish to run this project workflow."

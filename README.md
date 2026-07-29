@@ -66,7 +66,7 @@
 |--------|-------------|------|
 | `check-architecture` | `/spec_check_code_architecture` | 查詢功能/框架用法，輸出至 `fastplan/knowledge/` |
 | `find-why` | `/spec_find_why` | 解釋某段行為「為什麼會這樣」，輸出至 `fastplan/knowledge/` |
-| `sync-readme` | `/spec_sync_readme` | 掃描自上次同步以來的 commit，更新 `README.md` 與 `CLAUDE.md`、在 `CHANGELOG.md` 追加改動摘要，並同步三套指令副本 |
+| `sync-readme` | `/spec_sync_readme` | 掃描自上次同步以來的 commit，更新 `README.md`、追加 `CHANGELOG.md`，並同步存在的 `CLAUDE.md`／`AGENTS.md` |
 
 ---
 
@@ -170,16 +170,5 @@ AI：user-login_plan.md 歸檔至 fastplan/accomplish/，並清理 bug 報告
 - `fastplan/pending_test/[名稱]_plan.md` — 實作後
 - `fastplan/accomplish/[名稱]_plan.md` — 歸檔後
 - `fastplan/bug/[名稱]_bugs.md` — findbug 發現問題時產出，歸檔時清除
-
----
-
-## 維護：三套副本的同步機制
-
-三套指令內容以 `commands/` 為正本，由 `sync-readme` 的「同步指令副本」步驟維持一致：
-
-- `.claude/commands/`、`.github/prompts/` — 直接複製
-- `.claude/skills/spec/` — 自動格式轉換：檔案開頭加 `# [子指令] — [中文名]` 標題、標題層級降一級、指令參照轉為 `/spec [子指令]` 短格式
-
-指令內文提及其他指令時，一律使用完整指令名（`/spec_plan_◯◯`）；`/spec ◯◯` 短格式僅存在於 Skill 版轉換後的檔案中。
 
 <!-- last-synced-commit: b4f23d37169923414e33b952484b5eb98b60bd93 -->

@@ -1,17 +1,22 @@
-# verify — 驗證實作
+---
+name: spec-plan-verify
+description: Use when the user invokes `$spec-plan-verify` or asks to verify the expected effects of a named pending-test plan and record the evidence.
+---
 
-## 目的
+# Spec plan verify
+
+# 目的
 
 依照 `@fastplan/pending_test/[提案簡稱]_plan.md` 的內容，實際執行驗證，確認實作符合計劃預期的改動效果，並回報結果（不需歸檔，歸檔由 accomplish 負責）。
 
-## Superpowers Skills
+# Superpowers Skills
 
 **REQUIRED SUB-SKILL**：執行驗證時，呼叫 `superpowers:verification-before-completion` skill，實際執行驗證指令並確認輸出後才可回報結果，嚴禁未執行就宣稱通過。
 
-## 作業流程
+# 作業流程
 
 1. 讀取 `@fastplan/pending_test/[提案簡稱]_plan.md`
-   * 若不存在，告知使用者需先執行 `/spec implement [提案簡稱]`，直接結束
+   * 若不存在，告知使用者需先執行 `$spec-plan-implement [提案簡稱]`，直接結束
 2. 分支防呆：檢查是否存在尚未 merge 回 main／master 的 `feature/[提案簡稱]` 分支；若存在且當前 checkout 不在該分支上，停下警告使用者（請先切回該分支，或先執行 accomplish 完成 merge），**不得繼續驗證**——否則驗證跑的是不含該改動的程式碼，結果失真
 3. 根據計劃中的「改動效果」，逐項設計驗證方式（執行測試、實際操作功能、檢查輸出）
 4. 實際執行驗證，逐項記錄通過或未通過及其證據
@@ -21,20 +26,20 @@
    * 全部通過 → 提示使用者執行 accomplish
    * 有未通過項目 → 告知使用者未通過的項目與原因
 
-## 輸出後提示
+# 輸出後提示
 
 驗證全部通過時，必須在回覆末尾加上以下提示：
 
-> 驗證通過。可執行 `/spec accomplish [提案簡稱]` 歸檔。
+> 驗證通過。可執行 `$spec-plan-accomplish [提案簡稱]` 歸檔。
 
 有項目未通過時，必須在回覆末尾加上以下提示：
 
-> 驗證未通過，問題已記錄於計劃的「待解決問題」章節。可執行 `/spec modify [提案簡稱]` 調整方案。
+> 驗證未通過，問題已記錄於計劃的「待解決問題」章節。可執行 `$spec-plan-modify [提案簡稱]` 調整方案。
 
-## 命名規範
+# 命名規範
 
 * **提案簡稱**：使用小寫、連字號，例：`task-refactor`、`onboarding-flow`
 
-## 使用語言
+# 使用語言
 
 使用與使用者相同的語言即可
